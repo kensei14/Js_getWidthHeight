@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>getWidthHeight</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var btn = document.getElementById("btn");
+				
+				getWidthHeight();
+			 	btn.addEventListener("click", function() {
+			 		$("#parent").css("display", "block");
+			 		$("#test").css("display", "block");
+			 		getWidthHeight();
+			 	}, false);
+			});
+			
+			function getWidthHeight() {
+				var elem = document.getElementById("test");
+				var $elem = $("#test");
+				
+				console.log($("#test").width());
+				console.log(typeof $("#test").width());
+				console.log($("#test").css("width"));
+				console.log($("#test").attr("width"));
+			}
+		</script>
+		<!-- Date: 2012-10-23 -->
+	</head>
+	<body style="width: 500px; height: 500px;">
+	  <input id="btn" type="button" value="getWidthHeight" />
+	  <div id="parent" style="display: none; width: 70%; height: 80%; border: 1px solid black;">
+		  <div id="test" style="display: none; width: 70%; height: 80%; border: 1px solid black;">
+		  	  getWidthHeight
+		  </div>
+	  </div>
+	</body>
+</html>
+
